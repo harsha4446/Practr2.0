@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "27.0.3"
+
+    defaultConfig {
+        applicationId "in.co.mybsolutions.practrapp"
+        minSdkVersion 16
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+
+        // Enabling multidex support.
+        multiDexEnabled true
+
+        //
+        renderscriptTargetApi 21
+        renderscriptSupportModeEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        // Switch Control
+        maven { url "https://jitpack.io" }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+
+    // Card View
+    compile 'com.android.support:cardview-v7:26.1.0'
+
+    // MultiDex
+    compile 'com.android.support:multidex:1.0.0'
+
+    // Recycler view
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+
+    // Snackbar
+    compile 'com.android.support:design:26.1.0'
+
+    // Butterknife
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    // Physics Base Animation
+    compile "com.android.support:support-dynamic-animation:26.1.0"
+
+    // Real time blur view
+    compile 'com.github.mmin18:realtimeblurview:1.1.0'
+
+    // Seekbar library
+    compile 'com.crystal:crystalrangeseekbar:1.1.3'
+
+    // Date time picker
+    compile 'com.github.florent37:singledateandtimepicker:2.0.4'
+
+    // Tutorial Pager Indicator
+    compile 'me.relex:circleindicator:1.2.2@aar'
+
+    // Switch View
+     compile 'com.github.zcweng:switch-button:0.0.3@aar'
+//    compile 'com.github.luongvo:iOS-SwitchView:1.0.2'
+}

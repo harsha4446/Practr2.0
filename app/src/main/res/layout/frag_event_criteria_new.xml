@@ -1,0 +1,1009 @@
+<in.co.mybsolutions.practrapp.Utils.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:slider="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+
+    slider:umanoDragView="@+id/dragView"
+    slider:umanoFadeColor="#1fff"
+    slider:umanoOverlay="true"
+    slider:umanoPanelHeight="100dp"
+    slider:umanoShadowHeight="0dp">
+    <!--slider:umanoScrollableView="@+id/recyclerView"
+    android:background="@drawable/background_gradient"
+    sothree:umanoParallaxOffset="100dp"-->
+
+
+    <!-- MAIN CONTENT -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--android:background="@drawable/background_gradient"-->
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nsView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+            <!--android:layout_above="@+id/rlBottom"-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="60dp">
+
+                <TextView
+                    android:id="@+id/tvTagSimply"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Simply click on criteria to modify"
+                    android:textSize="14dp" />
+
+
+                <!--
+                    Main Criteria Add/Remove one by by
+                -->
+                <LinearLayout
+                    android:id="@+id/llCriteria"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_below="@+id/tvTagSimply"
+                    android:visibility="visible">
+
+
+                    <android.support.v7.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/cardViewCriteria"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        card_view:cardUseCompatPadding="true"
+
+                        card_view:cardCornerRadius="10dp"
+                        card_view:cardElevation="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="20dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp">
+                                <!--android:layout_marginTop="25dp"-->
+
+                                <RelativeLayout
+                                    android:id="@+id/rlMainCri0"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/ivCri0"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:src="@drawable/ic_red_delete" />
+
+                                    <EditText
+                                        android:id="@+id/edtCri0"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toLeftOf="@+id/llCri0"
+                                        android:layout_toRightOf="@+id/ivCri0"
+                                        android:background="@null"
+                                        android:hint="criteria 0"
+                                        android:paddingLeft="10dp"
+                                        android:paddingRight="10dp"
+                                        android:text=""
+                                        android:textSize="14dp" />
+
+                                    <LinearLayout
+                                        android:id="@+id/llCri0"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:orientation="horizontal">
+
+                                        <EditText
+                                            android:id="@+id/edtCriPts0"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@null"
+                                            android:hint="0"
+                                            android:gravity="right"
+                                            android:minWidth="30dp"
+                                            android:text=""
+                                            android:textSize="15dp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:text="pts"
+                                            android:textSize="15dp" />
+                                    </LinearLayout>
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:id="@+id/rlMainCri1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/rlMainCri0"
+                                    android:layout_marginTop="15dp"
+                                    android:visibility="gone">
+
+                                    <ImageView
+                                        android:id="@+id/ivCri1"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:src="@drawable/ic_red_delete" />
+
+                                    <EditText
+                                        android:id="@+id/edtCri1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toLeftOf="@+id/llCri1"
+                                        android:layout_toRightOf="@+id/ivCri1"
+                                        android:background="@null"
+                                        android:hint="criteria 1"
+                                        android:paddingLeft="10dp"
+                                        android:paddingRight="10dp"
+                                        android:text=""
+                                        android:textSize="14dp" />
+
+                                    <LinearLayout
+                                        android:id="@+id/llCri1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:orientation="horizontal">
+
+                                        <EditText
+                                            android:id="@+id/edtCriPts1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@null"
+                                            android:hint="0"
+                                            android:gravity="right"
+                                            android:minWidth="30dp"
+                                            android:text=""
+                                            android:textSize="15dp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:text="pts"
+                                            android:textSize="15dp" />
+                                    </LinearLayout>
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:id="@+id/rlMainCri2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/rlMainCri1"
+                                    android:layout_marginTop="15dp"
+                                    android:visibility="gone">
+
+                                    <ImageView
+                                        android:id="@+id/ivCri2"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:src="@drawable/ic_red_delete" />
+
+                                    <EditText
+                                        android:id="@+id/edtCri2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toLeftOf="@+id/llCri2"
+                                        android:layout_toRightOf="@+id/ivCri2"
+                                        android:background="@null"
+                                        android:hint="criteria 2"
+                                        android:paddingLeft="10dp"
+                                        android:paddingRight="10dp"
+                                        android:text=""
+                                        android:textSize="14dp" />
+
+                                    <LinearLayout
+                                        android:id="@+id/llCri2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:orientation="horizontal">
+
+                                        <EditText
+                                            android:id="@+id/edtCriPts2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@null"
+                                            android:hint="0"
+                                            android:gravity="right"
+                                            android:minWidth="30dp"
+                                            android:text=""
+                                            android:textSize="15dp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:text="pts"
+                                            android:textSize="15dp" />
+                                    </LinearLayout>
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:id="@+id/rlMainCri3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/rlMainCri2"
+                                    android:layout_marginTop="15dp"
+                                    android:visibility="gone">
+
+                                    <ImageView
+                                        android:id="@+id/ivCri3"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:src="@drawable/ic_red_delete" />
+
+                                    <EditText
+                                        android:id="@+id/edtCri3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toLeftOf="@+id/llCri3"
+                                        android:layout_toRightOf="@+id/ivCri3"
+                                        android:background="@null"
+                                        android:hint="criteria 3"
+                                        android:paddingLeft="10dp"
+                                        android:paddingRight="10dp"
+                                        android:text=""
+                                        android:textSize="14dp" />
+
+                                    <LinearLayout
+                                        android:id="@+id/llCri3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:orientation="horizontal">
+
+                                        <EditText
+                                            android:id="@+id/edtCriPts3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@null"
+                                            android:hint="0"
+                                            android:gravity="right"
+                                            android:minWidth="30dp"
+                                            android:text=""
+                                            android:textSize="15dp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:text="pts"
+                                            android:textSize="15dp" />
+                                    </LinearLayout>
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:id="@+id/rlMainCri4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/rlMainCri3"
+                                    android:layout_marginTop="15dp"
+                                    android:visibility="gone">
+
+                                    <ImageView
+                                        android:id="@+id/ivCri4"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:src="@drawable/ic_red_delete" />
+
+                                    <EditText
+                                        android:id="@+id/edtCri4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toLeftOf="@+id/llCri4"
+                                        android:layout_toRightOf="@+id/ivCri4"
+                                        android:background="@null"
+                                        android:hint="criteria 4"
+                                        android:paddingLeft="10dp"
+                                        android:paddingRight="10dp"
+                                        android:text=""
+                                        android:textSize="14dp" />
+
+                                    <LinearLayout
+                                        android:id="@+id/llCri4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:orientation="horizontal">
+
+                                        <EditText
+                                            android:id="@+id/edtCriPts4"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@null"
+                                            android:hint="0"
+                                            android:gravity="right"
+                                            android:minWidth="30dp"
+                                            android:text=""
+                                            android:textSize="15dp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:text="pts"
+                                            android:textSize="15dp" />
+                                    </LinearLayout>
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:id="@+id/rlMainCri5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/rlMainCri4"
+                                    android:layout_marginTop="15dp"
+                                    android:visibility="gone">
+
+                                    <ImageView
+                                        android:id="@+id/ivCri5"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:src="@drawable/ic_red_delete" />
+
+                                    <EditText
+                                        android:id="@+id/edtCri5"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toLeftOf="@+id/llCri5"
+                                        android:layout_toRightOf="@+id/ivCri5"
+                                        android:background="@null"
+                                        android:hint="criteria 5"
+                                        android:paddingLeft="10dp"
+                                        android:paddingRight="10dp"
+                                        android:text=""
+                                        android:textSize="14dp" />
+
+                                    <LinearLayout
+                                        android:id="@+id/llCri5"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:orientation="horizontal">
+
+                                        <EditText
+                                            android:id="@+id/edtCriPts5"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@null"
+                                            android:hint="0"
+                                            android:gravity="right"
+                                            android:minWidth="30dp"
+                                            android:text=""
+                                            android:textSize="15dp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:text="pts"
+                                            android:textSize="15dp" />
+                                    </LinearLayout>
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:id="@+id/tvNewCriteria"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/rlMainCri5"
+                                    android:layout_marginLeft="25dp"
+                                    android:layout_marginTop="15dp"
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="5dp"
+                                    android:text="new criteria"
+                                    android:textSize="14dp" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <RelativeLayout
+                        android:id="@+id/rlBottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_alignParentBottom="true">
+
+                        <android.support.v7.widget.CardView
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/cardView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:visibility="visible"
+
+                            card_view:cardBackgroundColor="@color/button_text_blue"
+                            card_view:cardCornerRadius="10dp"
+                            card_view:cardElevation="10dp"
+                            card_view:cardUseCompatPadding="true">
+                            <!--android:foreground="?android:attr/selectableItemBackground"
+                            android:layout_margin="11dp"
+                            card_view:cardUseCompatPadding="true"-->
+
+                            <TextView
+                                android:id="@+id/tvAddWeight"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:gravity="center"
+                                android:text="add weight"
+                                android:textColor="@color/clrWhite"
+                                android:textSize="22dp" />
+                        </android.support.v7.widget.CardView>
+
+
+                        <RelativeLayout
+                            android:id="@+id/rlWeight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="5dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/ivRemoveWeight"
+                                android:layout_width="23dp"
+                                android:layout_height="23dp"
+                                android:src="@drawable/ic_red_delete"
+                                android:layout_alignParentRight="true"/>
+
+                            <TextView
+                                android:id="@+id/tvWeightage"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Weightage"
+                                android:layout_below="@+id/ivRemoveWeight"
+                                android:paddingLeft="10dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/clrBlack"
+                                android:textSize="16dp" />
+
+
+                            <TextView
+                                android:id="@+id/tvWeightageValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0.6"
+                                android:layout_below="@+id/ivRemoveWeight"
+                                android:paddingRight="20dp"
+                                android:textStyle="bold"
+                                android:layout_alignParentRight="true"
+                                android:textColor="@color/clrBlack"
+                                android:textSize="16dp" />
+
+                            <!--<com.crystal.crystalrangeseekbar.widgets.CrystalSeekbar-->
+                            <!--<com.crystal.crystalrangeseekbar.widgets.BubbleThumbSeekbar-->
+                                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                                <!--android:id="@+id/seekBar"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_below="@+id/tvWeightage"-->
+                                <!--android:layout_marginTop="5dp"-->
+
+                                <!--app:corner_radius="10"-->
+                                <!--app:min_value="0.0"-->
+                                <!--app:max_value="1.0"-->
+                                <!--app:data_type="_double"-->
+
+                                <!--app:left_thumb_image_pressed="@drawable/thumb"-->
+                                <!--app:bar_color="@color/clrLightGraySecond"-->
+                                <!--app:bar_highlight_color="@color/seek_bar_progress"-->
+                                <!--/>-->
+                            <!--app:left_thumb_image="@drawable/thumb"
+                            app:left_thumb_image_pressed="@drawable/thumb"
+                            app:left_thumb_color="@color/button_text_blue"
+                                app:left_thumb_color_pressed="@color/clrLightGray"-->
+
+
+                            <com.crystal.crystalrangeseekbar.widgets.CrystalSeekbar
+                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/seekBar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvWeightage"
+                                android:layout_marginTop="5dp"
+
+                                app:corner_radius="10"
+                                app:min_value="0.0"
+                                app:max_value="1.0"
+                                app:data_type="_double"
+
+                                app:bar_color="@color/clrLightGraySecond"
+                                app:bar_highlight_color="@color/seek_bar_progress"
+
+                                app:left_thumb_image="@drawable/thumb"
+                                app:left_thumb_image_pressed="@drawable/thumb" />
+                            <!--app:left_thumb_color="#775E4F"
+                                app:left_thumb_color_pressed="#4C2D1A"-->
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+                <!--
+                    Main Chart Layout
+                -->
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/llChart"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="400dp"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:visibility="gone"-->
+                    <!--android:layout_below="@+id/tvTagSimply">-->
+
+                    <!--<in.co.mybsolutions.practrapp.Utils.charts.charts.PieChart-->
+                        <!--android:id="@+id/pieChart"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_gravity="center"/>-->
+
+                <!--</LinearLayout>-->
+
+            </RelativeLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/llChart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingBottom="80dp"
+            android:background="@color/clrWhite"
+            android:layout_marginTop="40dp">
+
+            <in.co.mybsolutions.practrapp.Utils.charts.charts.PieChart
+                android:id="@+id/pieChart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/clrWhite"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <com.github.mmin18.widget.RealtimeBlurView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/realTimeBlurView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:realtimeBlurRadius="0dp"
+            android:visibility="gone"
+            app:realtimeOverlayColor="#1000" />
+
+
+    </RelativeLayout>
+
+
+    <!-- SLIDING LAYOUT -->
+    <LinearLayout
+        android:id="@+id/dragView"
+        android:layout_width="match_parent"
+        android:clickable="false"
+        android:focusable="false"
+        android:layout_height="400dp"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+        <!--android:clickable="true"
+        android:focusable="false"-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardViewSlidingCriteria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:foreground="?android:attr/selectableItemBackground"
+                card_view:cardUseCompatPadding="true"
+
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/rlCriteria"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:padding="25dp">
+                    <!--android:background="@drawable/white_round_rect_fill"
+                    android:layout_marginTop="25dp"-->
+
+                    <!--<RelativeLayout-->
+                    <!--android:id="@+id/rlSlidingCri0"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+
+                    <!--<ImageView-->
+                    <!--android:id="@+id/ivSlidingCri0"-->
+                    <!--android:layout_width="20dp"-->
+                    <!--android:layout_height="20dp"-->
+                    <!--android:src="@drawable/ic_red_delete" />-->
+
+                    <!--<EditText-->
+                    <!--android:id="@+id/edtSlidingCri0"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_toLeftOf="@+id/llSlidingCri0"-->
+                    <!--android:layout_toRightOf="@+id/ivSlidingCri0"-->
+                    <!--android:background="@null"-->
+                    <!--android:hint="criteria 0"-->
+                    <!--android:paddingLeft="10dp"-->
+                    <!--android:paddingRight="10dp"-->
+                    <!--android:text=""-->
+                    <!--android:textSize="14dp" />-->
+
+                    <!--<LinearLayout-->
+                    <!--android:id="@+id/llSlidingCri0"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<EditText-->
+                    <!--android:id="@+id/edtSlidingCriPts0"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="@null"-->
+                    <!--android:hint="0"-->
+                    <!--android:gravity="right"-->
+                    <!--android:minWidth="30dp"-->
+                    <!--android:text=""-->
+                    <!--android:textSize="15dp" />-->
+
+                    <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:text="pts"-->
+                    <!--android:textSize="15dp" />-->
+                    <!--</LinearLayout>-->
+                    <!--</RelativeLayout>-->
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlSlidingCri1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible">
+                        <!--android:layout_below="@+id/rlSlidingCri0"-->
+
+                        <ImageView
+                            android:id="@+id/ivSlidingCri1"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_red_delete" />
+
+                        <EditText
+                            android:id="@+id/edtSlidingCri1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/llSlidingCri1"
+                            android:layout_toRightOf="@+id/ivSlidingCri1"
+                            android:background="@null"
+                            android:hint="criteria 1"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:text=""
+                            android:textSize="14dp" />
+
+                        <LinearLayout
+                            android:id="@+id/llSlidingCri1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/edtSlidingCriPts1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:hint="0"
+                                android:gravity="right"
+                                android:minWidth="30dp"
+                                android:text=""
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="pts"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlSlidingCri2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlSlidingCri1"
+                        android:layout_marginTop="15dp"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/ivSlidingCri2"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_red_delete" />
+
+                        <EditText
+                            android:id="@+id/edtSlidingCri2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/llSlidingCri2"
+                            android:layout_toRightOf="@+id/ivSlidingCri2"
+                            android:background="@null"
+                            android:hint="criteria 2"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:text=""
+                            android:textSize="14dp" />
+
+                        <LinearLayout
+                            android:id="@+id/llSlidingCri2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/edtSlidingCriPts2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:hint="0"
+                                android:gravity="right"
+                                android:minWidth="30dp"
+                                android:text=""
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="pts"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlSlidingCri3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlSlidingCri2"
+                        android:layout_marginTop="15dp"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/ivSlidingCri3"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_red_delete" />
+
+                        <EditText
+                            android:id="@+id/edtSlidingCri3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/llSlidingCri3"
+                            android:layout_toRightOf="@+id/ivSlidingCri3"
+                            android:background="@null"
+                            android:hint="criteria 3"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:text=""
+                            android:textSize="14dp" />
+
+                        <LinearLayout
+                            android:id="@+id/llSlidingCri3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/edtSlidingCriPts3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:hint="0"
+                                android:gravity="right"
+                                android:minWidth="30dp"
+                                android:text=""
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="pts"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlSlidingCri4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlSlidingCri3"
+                        android:layout_marginTop="15dp"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/ivSlidingCri4"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_red_delete" />
+
+                        <EditText
+                            android:id="@+id/edtSlidingCri4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/llSlidingCri4"
+                            android:layout_toRightOf="@+id/ivSlidingCri4"
+                            android:background="@null"
+                            android:hint="criteria 4"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:text=""
+                            android:textSize="14dp" />
+
+                        <LinearLayout
+                            android:id="@+id/llSlidingCri4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/edtSlidingCriPts4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:hint="0"
+                                android:gravity="right"
+                                android:minWidth="30dp"
+                                android:text=""
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="pts"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlSlidingCri5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlSlidingCri4"
+                        android:layout_marginTop="15dp"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/ivSlidingCri5"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_red_delete" />
+
+                        <EditText
+                            android:id="@+id/edtSlidingCri5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/llSlidingCri5"
+                            android:layout_toRightOf="@+id/ivSlidingCri5"
+                            android:background="@null"
+                            android:hint="criteria 5"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:text=""
+                            android:textSize="14dp" />
+
+                        <LinearLayout
+                            android:id="@+id/llSlidingCri5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/edtSlidingCriPts5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:hint="0"
+                                android:gravity="right"
+                                android:minWidth="30dp"
+                                android:text=""
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="pts"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tvNewCriteria"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/rlSlidingCri5"-->
+                    <!--android:layout_marginLeft="25dp"-->
+                    <!--android:layout_marginTop="15dp"-->
+                    <!--android:paddingTop="5dp"-->
+                    <!--android:paddingBottom="5dp"-->
+                    <!--android:text="new criteria"-->
+                    <!--android:textSize="14dp" />-->
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+    </LinearLayout>
+</in.co.mybsolutions.practrapp.Utils.slidinguppanel.SlidingUpPanelLayout>

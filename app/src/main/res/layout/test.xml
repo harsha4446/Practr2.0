@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clrBlack"
+    android:paddingTop="50dp">
+
+    <LinearLayout
+        android:id="@+id/dragView"
+        android:layout_width="match_parent"
+        android:clickable="false"
+        android:focusable="false"
+        android:layout_height="400dp"
+        android:orientation="vertical">
+        <!--android:clickable="true"
+        android:focusable="false"-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rlBottomSheetFirst"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:background="@drawable/participants_bg"
+                android:padding="10dp"
+                android:visibility="visible">
+                <!--android:background="#7ba9fe"
+                android:clickable="false"
+                android:focusable="false"-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/ivUpRight"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PARTICIPANTS"
+                        android:textColor="@android:color/white"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvTagSwipe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTitle"
+                        android:text="Swipe up to manage participants"
+                        android:textColor="@color/clrWhite"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/ivUpRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_expand_less" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlBottomSheetSecond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/qualified_participants_bg"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/clrWhite"/>
+
+                <RelativeLayout
+                    android:id="@+id/rlSub"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/switchControl">
+
+                    <TextView
+                        android:id="@+id/tvQualifiedParticipants"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="QUALIFIED PARTICIPANTS"
+                        android:textColor="@color/clrBlack"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvQualifiedParticipants"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/ivSecondBottomSheetIcon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_red_delete" />
+
+                        <TextView
+                            android:id="@+id/tvTagEliminate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvTitle"
+                            android:layout_marginLeft="5dp"
+                            android:text="to eliminate, Swipe up to manage participants"
+                            android:textColor="@color/clrBlack"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <com.suke.widget.SwitchButton
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/switchControl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+
+
+                    app:sb_checked="true"
+                    app:sb_checkline_color="@color/button_text_blue"
+                    app:sb_button_color="@color/clrWhite"
+                    app:sb_shadow_color="#A36F95"
+                    app:sb_background="@color/clrRedApp"
+                    app:sb_checked_color="@color/button_text_blue"
+                    app:sb_uncheck_color="@color/clrRedApp"
+                    app:sb_uncheckcircle_color="@color/clrRedApp" />
+
+                <!--<Switch-->
+                <!--android:id="@+id/switchControl"-->
+                <!--android:layout_width="45dp"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:background="@drawable/toggle_selector"-->
+                <!--android:checked="true" />-->
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlSub"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:clipToPadding="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/clrWhite">
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+    <ImageView
+        android:id="@+id/ivSubBack"
+        android:layout_width="35dp"
+        android:layout_height="34dp"
+        android:layout_marginLeft="10dp"
+        android:padding="3dp"
+        android:background="@drawable/white_ripple"
+        android:src="@drawable/ic_back"
+        android:tint="@color/clrLightGraySecond" />
+
+    <TextView
+        android:id="@+id/tvTagPenalty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivSubBack"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingRight="10dp"
+        android:singleLine="true"
+        android:text="Penalty"
+        android:textColor="@color/clrBlack"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTagPenalty"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:paddingRight="10dp"
+        android:text="Penalize participants for misbehaviour in this round. (Max 20% of total)"
+        android:textColor="@color/clrBlack"
+        android:textSize="11dp" />
+
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_below="@+id/tvTag"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+
+            card_view:cardCornerRadius="10dp"
+            card_view:cardElevation="7dp"
+            card_view:cardUseCompatPadding="true">
+            <!--card_view:cardUseCompatPadding="true"-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+
+                <EditText
+                    android:id="@+id/tvTagEnterNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/ivRemove"
+                    android:background="@null"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:hint="enter points % to be reduced"
+                    android:textColor="@color/clrLightGraySecond"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:id="@+id/ivRemove"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_red_delete"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+
+        card_view:cardBackgroundColor="@color/button_text_blue"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardElevation="10dp"
+        card_view:cardUseCompatPadding="true">
+        <!--card_view:cardUseCompatPadding="true"
+        card_view:cardUseCompatPadding="true"-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:text="done"
+            android:textColor="@color/clrWhite"
+            android:textSize="22dp" />
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

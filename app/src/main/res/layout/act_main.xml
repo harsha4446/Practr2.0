@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="in.co.mybsolutions.practrapp.MainActivity">
+
+    <ImageSwitcher
+        android:id="@+id/imageSwitcher"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/overlay"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:id="@+id/tvTagIam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I am an"
+            android:textColor="@color/iam_color"
+            android:textSize="22dp" />
+
+        <TextView
+            android:id="@+id/tvTagLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Head"
+            android:textColor="@android:color/white"
+            android:textSize="32dp"
+            android:textStyle="bold" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="165dp">
+
+            <View
+                android:id="@+id/dummyView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_centerInParent="true"/>
+
+            <RelativeLayout
+                android:id="@+id/rlFirst"
+                android:layout_width="165dp"
+                android:layout_height="165dp"
+                android:layout_margin="5dp"
+                android:layout_toLeftOf="@+id/dummyView"
+                android:gravity="center_horizontal|bottom">
+                <!--android:background="@drawable/judge_selector"-->
+
+                <ImageView
+                    android:id="@+id/ivFirst"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/judge_selector" />
+
+                <TextView
+                    android:id="@+id/tvFirst"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Judge"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlSecond"
+                android:layout_width="165dp"
+                android:layout_height="165dp"
+                android:layout_toRightOf="@+id/dummyView"
+                android:layout_margin="5dp"
+                android:gravity="center_horizontal|bottom">
+                <!--android:background="@drawable/participant_selector"-->
+
+                <ImageView
+                    android:id="@+id/ivSecond"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/participant_selector" />
+
+                <TextView
+                    android:id="@+id/tvSecond"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Participant"
+                    android:gravity="center"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:weightSum="1">-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/lnFirst"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_margin="5dp"-->
+        <!--android:layout_weight="0.50"-->
+        <!--android:background="@drawable/judge_selector"-->
+        <!--android:gravity="center_horizontal|bottom"-->
+        <!--android:paddingBottom="10dp">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/tvFirst"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Judge"-->
+        <!--android:textColor="@android:color/white" />-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/lnSecond"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_margin="5dp"-->
+        <!--android:layout_weight="0.50"-->
+        <!--android:background="@drawable/participant_selector"-->
+        <!--android:gravity="center_horizontal|bottom"-->
+        <!--android:paddingBottom="10dp">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/tvSecond"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Participant"-->
+        <!--android:textColor="@android:color/white" />-->
+        <!--</LinearLayout>-->
+        <!--</LinearLayout>-->
+
+
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+
+            card_view:cardCornerRadius="10dp"
+            card_view:cardElevation="7dp"
+            android:layout_margin="5dp">
+            <!--card_view:cardUseCompatPadding="true"-->
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="get started"
+                android:gravity="center"
+                android:textColor="@color/button_text_blue"
+                android:textSize="22dp" />
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

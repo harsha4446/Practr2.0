@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#ffffff</color>
+
+    <color name="button_text_blue">#7fddee</color>
+    <color name="seek_bar_progress">#5CA8E8</color>
+    <color name="iam_color">#dfd8c8</color>
+
+
+    <color name="clrWhite">#FFFFFF</color>
+    <color name="clrBlack">#000000</color>
+    <color name="clrRed">#df0000</color>
+    <color name="clrRedApp">#F65353</color>
+    <color name="clrGreen">#00df00</color>
+    <color name="clrGreenJudge">#46e89d</color>
+
+    <color name="clrLightGray">#D3D3D3</color>
+    <color name="clrLightGraySecond">#999999</color>
+    <color name="clrLightGrayThird">#666666</color>
+    <color name="clrDarkGray">#333333</color>
+
+    <color name="clrBlurViewBlack">#66000000</color>
+    <color name="clrBlurViewRed">#CCF65353</color>
+
+
+    <color name="clrTR1Black">#96303F9F</color>
+
+    <color name="clrCriteria1">#533DF7</color>
+    <color name="clrCriteria2">#4755F7</color>
+    <color name="clrCriteria3">#3382F8</color>
+    <color name="clrCriteria4">#3BCAD6</color>
+    <color name="clrCriteria5">#46e89d</color>
+
+    <color name="clrTransparentWhite">#96ffffff</color>
+    <color name="clrTransparentWhiteSecond">#5bffffff</color>
+    <color name="clrTranspherent">#00000000</color>
+    <color name="clrTRAccentColor">#407fddee</color>
+    <color name="clrTRPrimaryColor">#80385696</color>
+    <color name="clrTRWhiteColor">#B3FFFFFF</color>
+    <color name="clrTRBlackColor">#4D000000</color>
+    <color name="clrTRGreyColor">#CCD3D3D3</color>
+
+    <!--
+        Pager Tab Indicator
+    -->
+    <color name="tab_indicator_color">#7fddee</color>
+    <color name="tab_indicator_bg_color">#ffffff</color>
+
+
+    <!-- Hex transparency in colors
+        100% — FF
+        95% — F2
+        90% — E6
+        85% — D9
+        80% — CC
+        75% — BF
+        70% — B3
+        65% — A6
+        60% — 99
+        55% — 8C
+        50% — 80
+        45% — 73
+        40% — 66
+        35% — 59
+        30% — 4D
+        25% — 40
+        20% — 33
+        15% — 26
+        10% — 1A
+        5% — 0D
+        0% — 00
+    -->
+
+</resources>

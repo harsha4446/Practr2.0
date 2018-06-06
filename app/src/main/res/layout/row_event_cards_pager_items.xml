@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:clipToPadding="false"
+    android:clipChildren="false"
+    android:paddingTop="50dp"
+    android:orientation="vertical">
+    <!--android:clipToPadding="false"
+    android:clipChildren="false"-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/dummyView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerInParent="true"/>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            card_view:cardUseCompatPadding="true"
+
+            card_view:cardCornerRadius="10dp"
+            card_view:cardElevation="5dp">
+            <!--android:layout_margin="11dp"
+            card_view:cardUseCompatPadding="true"-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <!--
+                    Edit Mode List
+                -->
+                <RelativeLayout
+                    android:id="@+id/rlEditModeList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/lnBottom"
+                    android:visibility="gone">
+
+                    <!--
+                        Add dummy header for Set top space like NormalList - NO USE
+                    -->
+                    <LinearLayout
+                        android:id="@+id/llEditHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="invisible">
+
+                        <RelativeLayout
+                            android:id="@+id/rlEditParticipants"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:paddingTop="10dp">
+
+                            <TextView
+                                android:id="@+id/tvEditParticipant"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15 Participants"
+                                android:textSize="14dp" />
+
+                            <ImageView
+                                android:id="@+id/ivEditSubMenu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/ic_3_dotmenu" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/tvEditBrandReview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rlParticipants"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Brand Revival"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/lnEditProgress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvBrandReview"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_weight="0.20"
+                                android:background="@drawable/background_gradient" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_weight="0.40"
+                                android:background="#c4c4c4" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.40"
+                                android:gravity="center"
+                                android:text="74%" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/ivSubBack"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_back" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerViewEditMode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/llEditHeader"
+                        android:clipToPadding="false"
+                        android:cacheColorHint="@android:color/transparent"
+                        android:childDivider="@android:color/transparent"
+                        android:choiceMode="singleChoice"
+                        android:groupIndicator="@null"
+                        android:scrollbars="none" />
+
+                    <!--<ListView-->
+                        <!--android:id="@+id/lvJudgeEditMode"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_below="@+id/ivSubBack" />-->
+                </RelativeLayout>
+
+
+                <!--
+                    Normal Lisr
+                -->
+                <RelativeLayout
+                    android:id="@+id/rlNormalModeList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/lnBottom"
+                    android:visibility="visible">
+
+
+                    <LinearLayout
+                        android:id="@+id/llNormalHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <RelativeLayout
+                            android:id="@+id/rlParticipants"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:paddingTop="10dp">
+
+                            <TextView
+                                android:id="@+id/tvParticipant"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15 Participants"
+                                android:textSize="14dp" />
+
+                            <ImageView
+                                android:id="@+id/ivSubMenu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/ic_3_dotmenu" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/tvBrandReview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rlParticipants"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Brand Revival"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/lnProgress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvBrandReview"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_weight="0.20"
+                                android:background="@drawable/background_gradient" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_weight="0.40"
+                                android:background="#c4c4c4" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.40"
+                                android:gravity="center"
+                                android:text="74%" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerViewNormalMode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/llNormalHeader"
+                        android:clipToPadding="false"
+                        android:cacheColorHint="@android:color/transparent"
+                        android:childDivider="@android:color/transparent"
+                        android:choiceMode="singleChoice"
+                        android:groupIndicator="@null"
+                        android:scrollbars="none" />
+
+                    <!--<ListView-->
+                        <!--android:id="@+id/lvJudgeNormalMode"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_below="@+id/lnProgress" />-->
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lnBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:id="@+id/lnJudge"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.50"
+                        android:background="#5ba6e7"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+                        <!--android:background="#5da8e9"-->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Invite"
+                            android:textSize="9dp"
+                            android:textColor="@android:color/white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="JUDGE"
+                            android:textColor="@android:color/white"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:background="#559bd9"/>
+                    <!--android:background="#559bd9"-->
+
+                    <LinearLayout
+                        android:id="@+id/lnScoreSheet"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.50"
+                        android:background="#5ba6e7"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+                        <!--android:background="#5ba6e7"-->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Share"
+                            android:textSize="9dp"
+                            android:textColor="@android:color/white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SCORESHEET"
+                            android:textColor="@android:color/white"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <!--
+            Score Sheet Cardview
+        -->
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cardScoreSheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+
+            card_view:cardUseCompatPadding="true"
+            card_view:cardCornerRadius="10dp"
+            card_view:cardElevation="5dp"
+            card_view:cardPreventCornerOverlap="false">
+            <!--android:layout_alignParentBottom="true"
+
+            android:layout_marginBottom="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="10dp"-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="13dp"
+                        android:text="Share xls by email or choose a different method." />
+
+                    <ImageView
+                        android:id="@+id/imgClose2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_red_delete"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/etEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toLeftOf="@+id/shadow_wrapper"
+                        android:background="@android:color/transparent"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@android:color/background_dark"
+                        android:textCursorDrawable="@null"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <in.co.mybsolutions.practrapp.Utils.materialshadows.MaterialShadowViewWrapper
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:tools="http://schemas.android.com/tools"
+
+                        android:id="@+id/shadow_wrapper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
+                        android:padding="5dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+
+                        app:showWhenAllReady="true"
+                        app:shadowOffsetX="15"
+                        app:shadowOffsetY="20"
+                        >
+                        <!--tools:context="com.sdsmdg.harjot.materialshadowsdemo.MainActivity"-->
+
+                        <!--<ImageView-->
+                            <!--android:layout_width="70dp"-->
+                            <!--android:layout_height="70dp"-->
+                            <!--android:elevation="8dp"-->
+                            <!--android:padding="15dp"-->
+                            <!--android:src="@drawable/ic_blue_add"/>-->
+                        <ImageView
+                            android:id="@+id/imgShare"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:elevation="5dp"
+                            android:padding="10dp"
+                            android:src="@drawable/img_share" />
+                    </in.co.mybsolutions.practrapp.Utils.materialshadows.MaterialShadowViewWrapper>
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/imgShare"-->
+                        <!--android:layout_width="50dp"-->
+                        <!--android:layout_height="50dp"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:src="@drawable/img_share" />-->
+                </RelativeLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <!--
+            Judge Cardview
+        -->
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cardJudgeInvite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:visibility="gone"
+
+            card_view:cardUseCompatPadding="true"
+            card_view:cardCornerRadius="10dp"
+            card_view:cardElevation="5dp"
+            card_view:cardPreventCornerOverlap="false">
+            <!--android:layout_alignParentBottom="true"
+            android:layout_marginTop="10dp"-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/imgClose1"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="5dp"
+                        android:textSize="13dp"
+                        android:text="@string/donot_share_this_code" />
+
+                    <ImageView
+                        android:id="@+id/imgClose1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_red_delete"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:id="@+id/imgRefresh"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/ic_refresh_new" />
+
+                    <TextView
+                        android:id="@+id/tvCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/imgRefresh"
+                        android:text="XLM546"
+                        android:textColor="@color/button_text_blue"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <!--<vn.luongvo.widget.iosswitchview.SwitchView-->
+                        <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                        <!--android:id="@+id/switchview"-->
+                        <!--android:layout_width="50dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--app:checked="true"-->
+                        <!--app:color_off="@color/clrRedApp"-->
+                        <!--app:color_on="@color/button_text_blue" />-->
+
+                    <com.suke.widget.SwitchButton
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/switchButton"
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+
+                        app:sb_checked="false"
+                        app:sb_checkline_color="@color/button_text_blue"
+                        app:sb_button_color="@color/clrWhite"
+                        app:sb_shadow_color="#A36F95"
+                        app:sb_background="@color/clrRedApp"
+                        app:sb_checked_color="@color/button_text_blue"
+                        app:sb_uncheck_color="@color/clrRedApp"
+                        app:sb_uncheckcircle_color="@color/clrRedApp" />
+                    <!--app:sb_checkline_color="#a5dc88"
+                    app:sb_uncheckcircle_color="#A36F95"-->
+
+                    <!--<android.support.v7.widget.SwitchCompat-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:layout_gravity="right|center_vertical" />-->
+                </RelativeLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <!--android:layout_marginBottom="60dp"-->
+
+
+        <!--<RelativeLayout-->
+        <!--android:id="@+id/rel"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/card_view"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:visibility="visible">-->
+        <!---->
+        <!--</RelativeLayout>-->
+
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/judge_row_background"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <RelativeLayout
+            android:id="@+id/rel"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/judge_1" />
+
+            <View
+                android:id="@+id/vStatus"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/green_dot_judge" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/rel"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Amie Haralson"
+                android:textColor="@android:color/background_dark"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/tvTimeStamp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Logged in 15 mins ago."
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12dp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_red_delete" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

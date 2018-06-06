@@ -1,0 +1,338 @@
+<in.co.mybsolutions.practrapp.Utils.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:slider="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:background="@drawable/background_gradient"
+
+    slider:umanoDragView="@+id/dragView"
+    slider:umanoFadeColor="#1fff"
+    slider:umanoOverlay="false"
+    slider:umanoPanelHeight="75dp"
+    slider:umanoScrollableView="@+id/recyclerView"
+    slider:umanoShadowHeight="4dp">
+    <!--slider:umanoFadeColor="#1fff"
+    sothree:umanoParallaxOffset="100dp"-->
+
+
+    <!-- MAIN CONTENT -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--android:background="@drawable/background_gradient"-->
+
+        <TextView
+            android:id="@+id/tvEventName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Name"
+            android:textSize="35dp"
+            android:paddingLeft="40dp"
+            android:textStyle="bold"
+            android:layout_marginTop="70dp"
+            android:textColor="@color/clrWhite"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"/>
+
+        <android.support.v4.view.ViewPager xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/pager_question"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+
+            android:clipToPadding="false"
+            android:paddingLeft="60dp"
+            android:paddingRight="60dp"
+            />
+        <!--android:paddingTop="30dp"
+
+        tools:listitem="@layout/pager_item"
+        android:layout_below="@+id/tvEventName"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="0.15"
+        android:fitsSystemWindows="true"-->
+
+        <com.github.mmin18.widget.RealtimeBlurView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/realTimeBlurView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:realtimeBlurRadius="0dp"
+            app:realtimeOverlayColor="#1000" />
+        <!--app:realtimeOverlayColor="@color/clrBlurViewBlack"-->
+
+        <!--
+           Card - Add By Code
+        -->
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cardAddByCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
+
+
+            card_view:cardUseCompatPadding="true"
+            card_view:cardBackgroundColor="@color/clrWhite"
+            card_view:cardCornerRadius="10dp"
+            card_view:cardElevation="8dp">
+            <!--android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="50dp"
+
+            android:layout_gravity="bottom"-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTagAddByCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add by Code"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/clrLightGrayThird"
+                    android:textSize="12dp" />
+
+                <EditText
+                    android:id="@+id/edtAddByCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvTagAddByCode"
+                    android:background="@null"
+                    android:paddingBottom="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:paddingTop="5dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text=""
+                    android:textColor="@color/clrBlack"
+                    android:textSize="14dp" />
+
+
+                <in.co.mybsolutions.practrapp.Utils.materialshadows.MaterialShadowViewWrapper
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools"
+
+                    android:id="@+id/shadow_wrapper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:padding="5dp"
+                    android:layout_below="@+id/edtAddByCode"
+                    android:layout_alignParentRight="true"
+
+                    app:showWhenAllReady="true"
+                    app:shadowOffsetX="15"
+                    app:shadowOffsetY="20"
+                    >
+                    <!--tools:context="com.sdsmdg.harjot.materialshadowsdemo.MainActivity"-->
+
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:elevation="6dp"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_blue_add"/>
+
+                </in.co.mybsolutions.practrapp.Utils.materialshadows.MaterialShadowViewWrapper>
+
+                <!--<android.support.design.widget.FloatingActionButton-->
+                    <!--xmlns:app="http://schemas.android.com/tools"-->
+                    <!--android:id="@+id/fab"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_below="@+id/edtAddByCode"-->
+                    <!--android:layout_marginBottom="10dp"-->
+                    <!--android:layout_marginRight="10dp"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:src="@drawable/ic_add"-->
+                    <!--android:tint="@color/clrWhite"-->
+
+                    <!--card_view:fabSize="mini"-->
+                    <!--card_view:elevation="10dp"-->
+                    <!--card_view:rippleColor="@color/clrWhite"-->
+                    <!--card_view:backgroundTint="@color/button_text_blue" />-->
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+
+
+    <!-- SLIDING LAYOUT -->
+    <LinearLayout
+        android:id="@+id/dragView"
+        android:layout_width="match_parent"
+        android:clickable="false"
+        android:focusable="false"
+        android:layout_height="400dp"
+        android:orientation="vertical">
+        <!--android:clickable="true"
+        android:focusable="false"-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rlBottomSheetFirst"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:gravity="center"
+                android:background="@drawable/participants_bg"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:visibility="visible">
+                <!--android:background="#7ba9fe"
+                android:clickable="false"
+                android:focusable="false"-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/ivUpRight"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PARTICIPANTS"
+                        android:textColor="@android:color/white"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvTagSwipe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTitle"
+                        android:text="Swipe up to manage participants"
+                        android:textColor="@color/clrWhite"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/ivUpRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_expand_less" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlBottomSheetSecond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/qualified_participants_bg"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/clrWhite"/>
+
+                <RelativeLayout
+                    android:id="@+id/rlSub"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/switchControl">
+
+                    <TextView
+                        android:id="@+id/tvQualifiedParticipants"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="QUALIFIED PARTICIPANTS"
+                        android:textColor="@color/clrBlack"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvQualifiedParticipants"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/ivSecondBottomSheetIcon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_red_delete" />
+
+                        <TextView
+                            android:id="@+id/tvTagEliminate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvTitle"
+                            android:layout_marginLeft="5dp"
+                            android:text="to eliminate, Swipe up to manage participants"
+                            android:textColor="@color/clrBlack"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <com.suke.widget.SwitchButton
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/switchControl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+
+
+                    app:sb_checked="true"
+                    app:sb_checkline_color="@color/button_text_blue"
+                    app:sb_button_color="@color/clrWhite"
+                    app:sb_shadow_color="#A36F95"
+                    app:sb_background="@color/clrRedApp"
+                    app:sb_checked_color="@color/button_text_blue"
+                    app:sb_uncheck_color="@color/clrRedApp"
+                    app:sb_uncheckcircle_color="@color/clrRedApp" />
+
+                <!--<Switch-->
+                    <!--android:id="@+id/switchControl"-->
+                    <!--android:layout_width="45dp"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:background="@drawable/toggle_selector"-->
+                    <!--android:checked="true" />-->
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlSub"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:clipToPadding="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+</in.co.mybsolutions.practrapp.Utils.slidinguppanel.SlidingUpPanelLayout>

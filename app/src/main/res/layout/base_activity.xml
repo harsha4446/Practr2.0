@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:outlineProvider="bounds"
+    tools:openDrawer="end">
+    <!--android:background="@color/clrWhite"
+    tools:openDrawer="start"-->
+
+
+    <FrameLayout
+        android:id="@+id/frm_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/llContainerMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/appToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="@color/colorPrimary"
+                android:elevation="8sp"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:contentInsetStart="0sp"
+                app:popupTheme="?toolbar_popup_theme">
+
+
+                <RelativeLayout
+                    android:id="@+id/headerlayoutSub"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:paddingRight="5sp">
+
+                    <RelativeLayout
+                        android:id="@+id/rlMenuMain"
+                        android:layout_width="56sp"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:id="@+id/rlSideLogo"
+                            android:layout_width="56sp"
+                            android:layout_height="match_parent"
+                            android:visibility="gone">
+                            <!--android:background="@drawable/white_btn_ripple"-->
+
+                            <ImageView
+                                android:id="@+id/ivSideLogo"
+                                android:layout_width="30sp"
+                                android:layout_height="40sp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="left|top"
+                                android:src="@mipmap/ic_launcher" />
+                            <!--android:src="@drawable/ic_menu_white"-->
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/rlMenu"
+                            android:layout_width="56sp"
+                            android:layout_height="match_parent"
+                            
+                            android:visibility="visible">
+                            <!--android:background="@drawable/white_btn_ripple"-->
+
+                            <ImageView
+                                android:id="@+id/ivMenu"
+                                android:layout_width="30sp"
+                                android:layout_height="40sp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="left|top"
+                                android:src="@drawable/ic_menu"
+                                android:tint="@color/clrBlack" />
+                            <!--android:src="@drawable/ic_menu_white"-->
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlBack"
+                            android:layout_width="56sp"
+                            android:layout_height="match_parent"
+                            
+                            android:visibility="gone">
+                            <!--android:background="@drawable/white_btn_ripple"-->
+
+                            <ImageView
+                                android:id="@+id/ivBack"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="left|top"
+                                android:src="@drawable/ic_back"
+                                android:tint="@color/clrBlack" />
+
+                            <!--android:src="@drawable/back"-->
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/rlMenuMain"
+                        android:text="@string/app_name"
+                        android:textColor="@color/clrBlack"
+                        android:textSize="20sp"
+                        android:visibility="visible" />
+                    <!--android:textColor="@color/clrBlueDark"-->
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlRightIcons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@+id/tvTitle"
+                        android:paddingRight="5sp">
+                        <!--android:layout_toRightOf="@+id/tvTitle"-->
+
+                        <RelativeLayout
+                            android:id="@+id/rlNext"
+                            android:layout_width="55dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/tvNext"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Next"
+                                android:textSize="17dp"
+                                android:textColor="@color/clrBlack"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="right|top" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlMenu4"
+                            android:layout_width="40sp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            
+                            android:visibility="gone">
+                            <!--android:background="@drawable/white_btn_ripple"-->
+
+                            <ImageView
+                                android:id="@+id/ivMenu4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="right|top"
+                                android:src="@mipmap/ic_launcher" />
+
+                            <TextView
+                                android:id="@+id/tvReqCounter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:padding="5dp"
+                                android:text="+1"
+                                android:textColor="@color/clrBlack"
+                                android:textSize="10sp"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlMenu3"
+                            android:layout_width="40sp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentTop="true"
+                            android:layout_toLeftOf="@+id/rlMenu4"
+                            
+                            android:visibility="gone">
+                            <!--android:background="@drawable/white_btn_ripple"-->
+
+                            <ImageView
+                                android:id="@+id/ivMenu3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="right|top"
+                                android:src="@mipmap/ic_launcher" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlMenu2"
+                            android:layout_width="40sp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentTop="true"
+                            android:layout_toLeftOf="@+id/rlMenu3"
+                            
+                            android:visibility="gone">
+                            <!--android:background="@drawable/white_btn_ripple"-->
+
+                            <ImageView
+                                android:id="@+id/ivMenu2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="right|top"
+                                android:src="@mipmap/ic_launcher" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlMenu1"
+                            android:layout_width="40sp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentTop="true"
+                            android:layout_toLeftOf="@+id/rlMenu2"
+                            
+                            android:visibility="gone">
+                            <!--android:background="@drawable/white_btn_ripple"-->
+
+                            <ImageView
+                                android:id="@+id/ivMenu1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="right|top"
+                                android:src="@mipmap/ic_launcher" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.Toolbar>
+
+            <RelativeLayout
+                android:id="@+id/rlBaseMainHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/rlSub"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary">
+
+                    <FrameLayout
+                        android:id="@+id/baseFrame"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/header_height">
+                        <!--android:layout_height="@dimen/bsm_header_43m"
+                        android:background="@color/clrBlueDark"-->
+
+                        <!--
+                            Relative layout was here - Menu, title and right buttons icon
+                        -->
+
+                    </FrameLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_below="@+id/rlSub" />
+                <!--android:background="@drawable/toolbar_dropshadow"-->
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llSubHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvSubTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/header_height"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:padding="5sp"
+                    android:text="@string/app_name"
+                    android:textColor="@color/clrBlack"
+                    android:textSize="17dp"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llContainerSub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <!--android:background="@color/clrWhite"-->
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- android:layout_gravity="start" -->
+    <RelativeLayout
+        android:id="@+id/left_drawer"
+        android:layout_width="@dimen/slide_menu_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#ffffff"
+        android:clickable="true">
+
+        <RelativeLayout
+            android:id="@+id/rlNavigationHeader"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@color/clrBlack">
+
+            <ImageView
+                android:id="@+id/ivBaseSongBgBlurImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_launcher_round"
+                android:background="@color/colorPrimary"
+                android:scaleType="centerCrop"
+                android:visibility="visible"/>
+
+            <!--<ImageView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:src="@drawable/gradiant_bg" />-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:layout_alignParentBottom="true">
+
+                <LinearLayout
+                    android:id="@+id/llUserPhotoBase"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical">
+
+                    <!--<com.utils.CircularImageView-->
+                        <!--android:id="@+id/ivBaseUserImage"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_margin="3dp"-->
+                        <!--android:adjustViewBounds="true"-->
+                        <!--android:background="@mipmap/ic_launcher_round"-->
+                        <!--android:padding="10sp"-->
+                        <!--android:scaleType="centerCrop" />-->
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvBaseUserFullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="Roxy Morphy"
+                    android:textColor="@color/clrWhite"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/tvBaseUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="rox.morphy99"
+                    android:textColor="@color/clrWhite"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/tvBaseUserEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="rox.morphy@gmail.com"
+                    android:textColor="@color/clrWhite"
+                    android:textSize="11dp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rlNavigationHeader" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/baseRecyclerView"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/rlSideBottom"
+            android:layout_below="@+id/rlNavigationHeader"
+            android:layout_gravity="start"
+            android:background="@color/clrWhite"
+            android:cacheColorHint="@android:color/transparent"
+            android:childDivider="@android:color/transparent"
+            android:choiceMode="singleChoice"
+            android:groupIndicator="@null"
+            android:scrollbars="none" />
+        <!--android:divider="@color/clrDivider"
+            android:dividerHeight="0.5dp"-->
+
+
+        <RelativeLayout
+            android:id="@+id/rlSideBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvTagSideBottomText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="material everything With"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/ivSideBottomLoveImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/tvTagSideBottomText"
+                android:src="@drawable/ic_launcher_background" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</android.support.v4.widget.DrawerLayout>

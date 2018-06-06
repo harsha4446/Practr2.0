@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="30dp">
+    <!--android:background="@drawable/bg2"-->
+
+    <TextView
+        android:id="@+id/tvTag1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Step Two"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/clrWhite"
+        android:textSize="15dp" />
+
+
+    <TextView
+        android:id="@+id/tvTag2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Rounds"
+        android:textColor="@color/clrWhite"
+        android:textSize="30dp"
+        android:layout_below="@+id/tvTag1"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTag3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTag2"
+        android:layout_marginTop="50dp"
+        android:text="Shared secret tokens with judges And invite them to score your participants."
+        android:textColor="@color/clrWhite"
+        android:textSize="16dp" />
+
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardScoreSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/tvTag3"
+
+        card_view:cardCornerRadius="12dp"
+        card_view:cardElevation="11dp"
+        card_view:cardUseCompatPadding="true">
+        <!--android:layout_marginTop="10dp"-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/donot_share_this_code" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/imgRefresh"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_refresh_new" />
+
+                <TextView
+                    android:id="@+id/tvCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/imgRefresh"
+                    android:text="XLM546"
+                    android:textColor="@color/button_text_blue"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+                <com.suke.widget.SwitchButton
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/switchControl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:enabled="false"
+
+
+                    app:sb_checked="true"
+                    app:sb_checkline_color="@color/button_text_blue"
+                    app:sb_button_color="@color/clrWhite"
+                    app:sb_shadow_color="#A36F95"
+                    app:sb_background="@color/clrRedApp"
+                    app:sb_checked_color="@color/button_text_blue"
+                    app:sb_uncheck_color="@color/clrRedApp"
+                    app:sb_uncheckcircle_color="@color/clrRedApp" />
+
+                <!--<Switch-->
+                    <!--android:layout_width="50dp"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:checked="true"-->
+                    <!--android:enabled="false"-->
+                    <!--android:background="@drawable/toggle_selector"-->
+                    <!--android:layout_gravity="right|center_vertical" />-->
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

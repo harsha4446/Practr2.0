@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clrWhite"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp">
+
+            <ImageView
+                android:id="@+id/ivSubBack"
+                android:layout_width="35dp"
+                android:layout_height="34dp"
+                android:padding="3dp"
+                android:src="@drawable/ic_back"
+                android:tint="@color/clrLightGraySecond" />
+
+            <TextView
+                android:id="@+id/tvDraftMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivSubBack"
+                android:layout_toLeftOf="@+id/switchControl"
+                android:layout_marginTop="5dp"
+                android:background="@null"
+                android:hint="Draft Mode."
+                android:text=""
+                android:textColor="@color/clrBlack"
+                android:textSize="16dp" />
+
+            <com.suke.widget.SwitchButton
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/switchControl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+
+                app:sb_checked="false"
+                app:sb_checkline_color="@color/button_text_blue"
+                app:sb_button_color="@color/clrWhite"
+                app:sb_shadow_color="#A36F95"
+                app:sb_background="@color/clrRedApp"
+                app:sb_checked_color="@color/button_text_blue"
+                app:sb_uncheck_color="@color/clrRedApp"
+                app:sb_uncheckcircle_color="@color/clrRedApp" />
+
+            <!--<Switch-->
+                <!--android:id="@+id/switchControl"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:background="@drawable/toggle_selector"-->
+                <!--android:checked="false" />-->
+
+
+            <RelativeLayout
+                android:id="@+id/rlSecond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/tvDraftMode">
+
+                <EditText
+                    android:id="@+id/edtDraftMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/llPts"
+                    android:background="@null"
+                    android:hint="Draft Mode."
+                    android:text="Brand Revival"
+                    android:maxLines="1"
+                    android:gravity="left"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:paddingRight="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/clrBlack"
+                    android:textSize="30dp" />
+
+
+                <LinearLayout
+                    android:id="@+id/llPts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+                    <!--android:layout_below="@+id/rlSecond"-->
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ivSubBack"
+                        android:layout_toLeftOf="@+id/switchControl"
+                        android:background="@null"
+                        android:text="100"
+                        android:textColor="@color/clrBlack"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ivSubBack"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toLeftOf="@+id/switchControl"
+                        android:background="@null"
+                        android:text="pts"
+                        android:textColor="@color/button_text_blue"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <!--<View-->
+            <!--android:id="@+id/dummyView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:layout_below="@+id/rlHeader"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:background="@color/clrLightGray" />-->
+
+
+        <in.co.mybsolutions.practrapp.Utils.pagertabindicator.PagerTabsIndicator xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/indicatorTab"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/rlHeader"
+            android:background="@color/clrWhite"
+
+            app:tab_highlight_text="true"
+            app:tab_highlight_text_color="@color/clrBlack"
+            app:tab_indicator="bottom_bar"
+            app:tab_indicator_resource="@drawable/indicator"
+            app:tab_indicator_scale_type="fitXY"
+            app:tab_lock_expanded="true"
+            app:tab_indicator_height="3dp"
+            app:tab_show_divider="true"
+            app:tab_divider_margin="-15dp"
+            app:tab_divider_resource="@drawable/divider"
+            app:tab_divider_width="2dp"
+            app:tab_text_color="@color/clrLightGraySecond"
+            app:tab_text_size="13dp" />
+        <!--app:tab_divider_resource="@drawable/divider"
+        app:tab_divider_color="@color/clrLightGray"-->
+
+
+        <!--<in.co.mybsolutions.practrapp.Utils.imgtabindicator.ImgIndicatorTab xmlns:imgtab="http://schemas.android.com/apk/res-auto"-->
+        <!--android:id="@+id/indicatorTab"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="45dp"-->
+        <!--android:layout_below="@+id/dummyView"-->
+        <!--android:background="#ffffff"-->
+        <!--android:textSize="14dp"-->
+
+        <!--imgtab:deselectedTextColor="@color/clrLightGraySecond"-->
+        <!--imgtab:fitIndicatorWithTabWidth="false"-->
+        <!--imgtab:indicatorDrawable="@drawable/rect"-->
+        <!--imgtab:selectedTextColor="@color/clrBlack" />-->
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/indicatorTab" />
+        <!--android:layout_above="@+id/rlBottom"-->
+
+
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/rlBottom"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:paddingLeft="15dp"-->
+            <!--android:paddingRight="15dp"-->
+            <!--android:paddingTop="5dp">-->
+
+            <android.support.design.widget.FloatingActionButton xmlns:app="http://schemas.android.com/tools"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/fabDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:elevation="5dp"
+                android:src="@drawable/ic_done"
+                android:tint="@color/clrWhite"
+                android:layout_alignParentBottom="true"
+
+                card_view:backgroundTint="@color/button_text_blue"
+                card_view:rippleColor="@color/clrWhite" />
+
+
+            <android.support.design.widget.FloatingActionButton xmlns:app="http://schemas.android.com/tools"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/fabClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="10dp"
+                android:elevation="5dp"
+                android:src="@drawable/ic_close"
+                android:tint="@color/clrWhite"
+                android:layout_alignParentBottom="true"
+
+                card_view:backgroundTint="@color/clrRedApp"
+                card_view:rippleColor="@color/clrWhite" />
+
+        <!--</RelativeLayout>-->
+
+    </RelativeLayout>
+
+</LinearLayout>
